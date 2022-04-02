@@ -1,0 +1,13 @@
+#loginform,#user_login,#user_pass,.forgetmenot,.lostmenot,.privacy-policy-page-link, body.login,body.login div#login,body.login div#login h1,body.login div#login form#loginform input#user_login,
+body.login div#login form#loginform input#user_pass,
+body.login div#login form#loginform p.forgetmenot,
+body.login div#login form#loginform p.forgetmenot input#rememberme,
+body.login div#login form#loginform p.submit,
+body.login div#login form#loginform p.submit, #login > div.login-heading > h2 {
+	color:#dbb778;
+	font-family:bree-serif, sans-serif;
+}
+
+#wp-submit {
+	
+}
