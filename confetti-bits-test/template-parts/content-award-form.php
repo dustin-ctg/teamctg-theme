@@ -6,116 +6,6 @@
  * 
  */
 
-
-/* Maybe Notifications? */
-/**
- * Notification formatting callback for bp-friends notifications.
- *
- * @since BuddyPress 1.0.0
- *
- * @param string $action            The kind of notification being rendered.
- * @param int    $item_id           The primary item ID.
- * @param int    $secondary_item_id The secondary item ID.
- * @param int    $total_items       The total number of messaging-related notifications
- *                                  waiting for the user.
- * @param string $format            'string' for BuddyBar-compatible notifications;
- *                                  'array' for WP Toolbar. Default: 'string'.
- * @return array|string
- */
-
-/*
-function confetti_bits_format_notifications( $action, $item_id, $secondary_item_id, $total_items, $format = 'string' ) {
-
-	switch ( $action ) {
-		case 'new_confetti_bits':
-			$link = trailingslashit( bp_loggedin_user_domain() . '/confetti-bits' );
-
-			// $action and $amount are used to generate dynamic filter names.
-			$action = 'accepted';
-
-			// Set up the string and the filter.
-			if ( (int) $total_items > 1 ) {
-				$text   = sprintf( __( '%d sent you Confetti Bits', 'buddyboss' ), (int) $total_items );
-				$amount = 'multiple';
-			} else {
-				$text   = sprintf( __( '%s sent you Confetti Bits', 'buddyboss' ), bp_core_get_user_displayname( $secondary_item_id ) );
-				$amount = 'single';
-			}
-
-			break;
-
-		case 'new_confetti_bits':
-			$link = bp_loggedin_user_domain() . bp_get_friends_slug() . '/requests/?new';
-
-			$action = 'request';
-
-			// Set up the string and the filter.
-			if ( (int) $total_items > 1 ) {
-				$text   = sprintf( __( 'You have %d pending requests to connect', 'buddyboss' ), (int) $total_items );
-				$amount = 'multiple';
-			} else {
-				$text   = sprintf( __( '%s sent you an invitation to connect', 'buddyboss' ), bp_core_get_user_displayname( $item_id ) );
-				$amount = 'single';
-			}
-
-			break;
-	}
-*/
-	// Return either an HTML link or an array, depending on the requested format.
-/*	if ( 'string' == $format ) {
-
-		/**
-		 * Filters the format of friendship notifications based on type and amount * of notifications pending.
-		 *
-		 * This is a variable filter that has four possible versions.
-		 * The four possible versions are:
-		 *   - bp_friends_single_friendship_accepted_notification
-		 *   - bp_friends_multiple_friendship_accepted_notification
-		 *   - bp_friends_single_friendship_request_notification
-		 *   - bp_friends_multiple_friendship_request_notification
-		 *
-		 * @since BuddyPress 1.0.0
-		 *
-		 * @param string|array $value       Depending on format, an HTML link to new requests profile
-		 *                                  tab or array with link and text.
-		 * @param int          $total_items The total number of messaging-related notifications
-		 *                                  waiting for the user.
-		 * @param int          $item_id     The primary item ID.
-		 */
-
-/*
-		$return = apply_filters( 'confetti_bits_' . $amount . '_got_bits_' . $action . '_notification', '<a href="' . esc_url( $link ) . '">' . esc_html( $text ) . '</a>', (int) $total_items, $item_id );
-	} else {
-		/** This filter is documented in bp-friends/bp-friends-notifications.php */
-/*		$return = apply_filters(
-			'confetti_bits_' . $amount . '_leadership_' . $action . '_notification',
-			array(
-				'link' => $link,
-				'text' => $text,
-			),
-			(int) $total_items,
-			$item_id
-		);
-	}
-
-	/**
-	 * Fires at the end of the confetti_bits notification format callback.
-	 *
-	 * @since BuddyPress 1.0.0
-	 *
-	 * @param string       $action            The kind of notification being rendered.
-	 * @param int          $item_id           The primary item ID.
-	 * @param int          $secondary_item_id The secondary item ID.
-	 * @param int          $total_items       The total number of messaging-related notifications
-	 *                                        waiting for the user.
-	 * @param array|string $return            Notification text string or array of link and text.
-	 */
-/*	do_action( 'confetti_bits_format_notifications', $action, $item_id, $secondary_item_id, $total_items, $return );
-
-	return $return;
-}
-*/
-
 /*---------- Start Award Form Functions ----------*/
 
 
@@ -135,11 +25,12 @@ if(isset($_POST['submitted'])) {
 
 
 	// If the id is empty, throw an error, else set the id for the point add function
-	if(trim($_POST['user_id']) === '' || trim($_POST['member_display_name'] === '' ) ) {
+	if( trim ( $_POST['user_id'] ) === '' || trim ( $_POST['member_display_name'] === '' ) ) {
 		$user_id = '';
 		$user_idError = 'Please select someone to award bits to.';
 		$hasError = true;
 		$formSuccess = false;
+		
 	} else {
 		$recipient_name = trim($_POST['member_display_name']);
 		$identifier = trim($_POST['user_id']);
@@ -208,22 +99,20 @@ if(isset($_POST['submitted'])) {
 			setcookie('ConfettiBits', $_COOKIE['ConfettiBits'] + $amount , mktime(24,0,0) );
 			
 		}
-				
-		mycred_add('leadership_bits', $user_id, $amount, $log_ref . ' – from ' . $sender_name );
-
-//		send_confetti_bits( $user_id, get_current_user_id() );
 		
-		/*bp_notifications_add_notification(
+		mycred_add('leadership_bits', $user_id, $amount, $log_ref . ' – from ' . $sender_name );
+		
+		bp_notifications_add_notification(
 		array(
 			'user_id'           => $user_id,
 			'item_id'           => $wpdb->insert_id,
 			'secondary_item_id' => $sender_id,
 			'component_name'    => 'confetti_bits',
-			'component_action'  => 'new_confetti_bits',
+			'component_action'  => 'confetti_bits_send_bits',
 			'date_notified'     => bp_core_current_time(),
 			'is_new'            => 1,
 		)
-	);*/
+	);
 		
 		$_SESSION['submitMessage'] = '<div class="confetti-bits-module">We successfully sent bits to ' . $recipient_name . '!</div>';
 		$user_id = '';
@@ -232,7 +121,7 @@ if(isset($_POST['submitted'])) {
 		
 		
 			
-		header('Location:https://teamctg.com/confetti-bits-test/', true, 303);
+		header('Location:' . home_url('confetti-bits-test'), true, 303);
 		ob_end_flush();
 		exit;
 
@@ -254,9 +143,6 @@ if(isset($_POST['submitted'])) {
 		return false;
 	}
 }
-
-echo bp_is_active('confetti-bits-notifications') ? "true" : "false" . '<br>';
-print_r (bp_notifications_get_registered_components());
 
 ?>
 
@@ -425,9 +311,6 @@ print_r (bp_notifications_get_registered_components());
 			<input type="hidden" name="submitted" id="submitted" value="true" />
 		</form>
 	<p>
-		<?php 
-print_r( bp_notifications_get_notification( 9066 ));
-		?>
 	</p>
 		
 	<?php if ( !is_this_admins()  && isset($_COOKIE['ConfettiBits']) && $_COOKIE['ConfettiBits'] > 1 && $_COOKIE['ConfettiBits'] < 20 ) { ?>

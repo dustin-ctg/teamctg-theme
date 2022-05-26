@@ -2,22 +2,19 @@
 
 jQuery(document).ready(function(){
 	
-	var awardAmount = jQuery('#log_ref');
+	var requestAmount = jQuery('#cb_request_option');
 	var memberSelect = jQuery('.memberSelect');
 	var memberName = jQuery('.memberName');
-	var memberAvatar = jQuery('.search-results-avatar');
+	var memberAvatar = jQuery('.cb-search-results-avatar');
 	var submitMessage = jQuery('.submission-message-popup');
 
 	var transferToID = document.querySelector("#transfer_user_id");
-	var sendToID = document.querySelector("#user_id");
+	var sendToID = document.querySelector("#recipient_id");
 	var transferToName = document.querySelector("#transfer_member_display_name");
-	var sendToName = document.querySelector("#member_display_name");
-	var sendToAmount = document.querySelector("#award_amount");
+	var sendToName = document.querySelector("#recipient_name");
+	var sendToAmount = document.querySelector("#cb_request_amount");
 
 	
-//	jQuery("#video-975_html5_api")[0].play();
-	
-
 	submitMessage.ready().fadeIn();
 	
 	memberSelect.ready().delay().slideDown( function(){
@@ -44,6 +41,7 @@ jQuery(document).ready(function(){
 		var that = jQuery('.memberSelect').not( this );
 		
 		
+		
 		switch ( true ) {
 				
 				case that.hasClass('isSelected'):
@@ -51,7 +49,7 @@ jQuery(document).ready(function(){
 					jQuery('.memberSelect').removeClass('isSelected');
 					jQuery(this).addClass('isSelected');
 				
-				if ( jQuery(this).hasClass('award-member') ) {
+				if ( jQuery(this).hasClass('send-bits') ) {
 					sendToID.value = memberData;
 					sendToName.value = memberNameData;
 				} else if ( jQuery(this).hasClass('transfer-member') ) {
@@ -74,12 +72,14 @@ jQuery(document).ready(function(){
 				break;
 		
 				default:
-				
+
 					jQuery(this).addClass('isSelected');
 				
-				if ( jQuery(this).hasClass('award-member') ) {
+				if ( jQuery(this).hasClass('send-bits') ) {
 					sendToID.value = memberData;
 					sendToName.value = memberNameData;
+					
+					console.log(sendToName.value);
 				} else if ( jQuery(this).hasClass('transfer-member') ) {
 					transferToID.value = memberData;
 					transferToName.value = memberNameData;
@@ -91,11 +91,11 @@ jQuery(document).ready(function(){
 		}
 	});
 	
-	awardAmount.change(function() {
+	requestAmount.change(function() {
 		
-		var awardData = jQuery(this).find(':selected').data('award-value');
+		var requestData = jQuery(this).find(':selected').data('request-value');
 		
-		sendToAmount.value = awardData;
+		sendToAmount.value = requestData;
 		
 	});
 });

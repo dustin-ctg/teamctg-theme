@@ -100,9 +100,6 @@ if(isset($_POST['transfer_submitted'])) {
 					   disabled="true" 
 					   placeholder="Select a team member from the search panel">
 				
-				<?php if($user_idError != '') { ?>
-					<span class="error"><?php echo $user_idError; ?></span>
-				<?php } ?>
 			</li>
 			
 			<li class="award-form-line">
@@ -121,10 +118,6 @@ if(isset($_POST['transfer_submitted'])) {
 						name="log_ref" 
 						id="log_ref" 
 						placeholder="Let us know what it's for!">
-				
-				<?php if($log_refError != '') { ?>
-					<span class="error"><?php echo $log_refError; ?></span>
-				<?php } ?>
 			</li>
 				
 			<li class="award-form-line">
@@ -136,10 +129,6 @@ if(isset($_POST['transfer_submitted'])) {
 					   placeholder="How many bits do you want to send?"
 					   value="">
 					   
-
-				<?php if($amountError != '') { ?>
-					<span class="error"><?php echo $amountError; ?></span>
-				<?php } ?>
 			</li>
 				
 			<li class="award-form-line">

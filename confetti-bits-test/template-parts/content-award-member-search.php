@@ -154,4 +154,4 @@ if ( isset( $_POST['team_search_submitted'] ) ) {
 <?php	}
 } ?> 
 	</div> 
-<?php
+<?php 

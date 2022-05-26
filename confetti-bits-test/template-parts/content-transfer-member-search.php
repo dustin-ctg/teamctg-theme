@@ -152,4 +152,4 @@ if ( isset( $_POST['transfer_search_submitted'] ) ) {
 <?php	}
 } ?> 
 	</div> 
-<?php
+<?php 

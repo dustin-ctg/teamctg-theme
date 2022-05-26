@@ -38,7 +38,7 @@ function get_rid_of_the_menus() {
 		}
 	}
 }
-add_action('admin_enqueue_scripts','get_rid_of_the_menus');
+//add_action('admin_enqueue_scripts','get_rid_of_the_menus');
 
 //prevent editor from deleting, editing, or creating an administrator
 // only needed if the editor was given right to edit users
