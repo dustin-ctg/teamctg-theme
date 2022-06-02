@@ -11,7 +11,7 @@
 <div class="cb-container">
 	<div class="cb-module">
 		<h4 class="cb-heading">
-			Spend Bits for Requests!
+			Send a New Request
 		</h4>
 		<form class="cb-form" method="post" name="cb_request_form" id="cb_request_form" action="<?php echo  bp_get_canonical_url(); ?>" autocomplete="off">
 			
@@ -68,10 +68,18 @@
 				</li>
 			</ul>
 		</form>
-		<p class="cb-counter">
-			<?php //cb_total_for_current_day_notice(); ?>
-		</p>
+		
+<?php 
+/*/		$transaction_logs = new Confetti_Bits_Transactions_Transaction();
+	$transaction_query = $transaction_logs->get_users_balance( get_current_user_id() );
 
+	foreach ( $transaction_query as $query_result ) {
+
+		$total = $query_result['amount'];
+		echo $total . '??';
+	} 
+		/*/?>
 	</div><!-- End of Module -->
 </div>
 <?php 
+

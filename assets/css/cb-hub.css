@@ -5,7 +5,7 @@ Here's our stylesheet. It ain't honest, but it's much.
 --------------------------------------------------------------*/
 
 .bb-custom-typo h1, .bb-custom-typo .h1,  .bb-custom-typo h3, .bb-custom-typo .h3,  .bb-custom-typo h5, .bb-custom-typo .h5, .bb-custom-typo .bb-course-footer, .bb-custom-typo .ld-table-list-header .ld-text, .bb-custom-typo .gamipress-achievement-points, .bb-custom-typo .vjs-modal-dialog-content,h5.member-search-results-message {
-font-family:bree-serif, sans-serif;
+	font-family:bree-serif, sans-serif;
 }
 
 .bb-custom-typo h2, .bb-custom-typo .h2, .bb-custom-typo h4, .bb-custom-typo .h4, .bb-custom-typo h6, .bb-custom-typo .h6 {
@@ -118,34 +118,20 @@ a {
 	padding:40px;
 }
 
-.confetti-board * {
-	color:white;
-}
-
-.confetti-board tr {
-	border-bottom:3px dashed #dbb77850;
-}
-
-
-.cb-log {
-	
-	
-	
-}
 
 .cb-log-pagination {
-	
+
 	margin:auto;
 	display:flex;
 	justify-content:space-between;
 	background-color:#dbb778;
 	border-radius:50px;
 	padding:5px;
-	
+
 }
 
 .cb-log-pagination li a {
-	
+
 	color:white;
 	display:flex;
 	justify-content:center;
@@ -157,7 +143,7 @@ a {
 }
 
 .cb-log-pagination li {
-	
+
 	display:flex;
 	justify-content:center;
 	align-items:center;
@@ -167,151 +153,56 @@ a {
 	border:0;
 	border-radius:50px;
 	transition:.15s ease-in-out;
-	
+
 }
 
 .cb-log-pagination .cb-log-link-disabled:hover {
-	
+
 	cursor:default;
 	color:white;
 	border:0;
 	background-color:transparent;
-	
+
 }
 
 .cb-log-pagination li:hover a {
-	
+
 	color:#dbb778;
-	
+
 }
 
 .cb-log-pagination li:hover {
-	
+
 	color:#dbb778;
 	cursor:pointer;
 	border:0;
 	transition:.15s ease-in-out;
 	background-color:#2a2a2a;
-	
+
 }
 
 .cb-log-row, .cb-log-header {
-	
+
 	display:flex;
 	justify-content:space-between;
 	width:100%;
 	margin:1rem auto;
 	border-bottom:1px solid #d1cbc1;
 	padding:0px 0px 10px 0px;
-	
+
 }
 
 .cb-log-row-item, .cb-log-header-item {
-	
+
 	flex:1 0 30%;
 	overflow-wrap: break-word;
-	
+
 }
 
 .cb-log-header-item {
-	
+
 	font-weight:bold;
-	
-}
 
-/*----------------------------------------
-*
-* Mobile Styles
-*
-*----------------------------------------*/
-
-@media (max-width:480px) {
-	/*----------Main Dashboard Styles----------*/
-	.dashboard-container {
-		flex-wrap:wrap;
-		flex-direction:column;
-	}
-
-
-
-	.decor-line {
-		border-width: 3px;
-		border-radius:10px;
-		width:6rem;
-	}
-
-
-	.bitpanel-widget-container .decor-line {
-		border-width: 3px;
-		border-radius:10px;
-		width:6rem;
-	}
-
-	/*----------Transfer Module----------*/
-	.mycred-submit-transfer {
-		background-color:#dbb778;
-		text-transform:uppercase;
-		font-family:dinosaur, sans-serif;
-		transition:.15s ease-in-out;
-	}
-	.mycred-submit-transfer:hover {
-		transform:scale(1.15);
-		transition:.15s ease-in-out;
-	}
-	.mycred-transfer-form label {
-		color:#2a2a2a;
-		margin-top:10px;
-		margin-bottom:0;
-	}
-
-	.mycred-transfer-form label:after {
-		content:"";
-		display:block;
-		width:6rem;
-		height:4px;
-		margin:4px 0px 6px 0px;
-		background-color:#2a2a2a;
-		border-radius:10px
-	}
-
-	.mycred-transfer-form input[type=text] {
-		margin-top:0;
-	}
-
-	/*----------Bit History Module----------*/
-	.mycred-history-wrapper * {
-		color:#2a2a2a;
-	}
-
-	.pagination {
-		margin:0;
-		display:flex;
-		justify-content:space-between;
-		flex-wrap:wrap;
-		background-color:transparent;
-		border-radius:0;
-	}
-
-
-	.pagination span, .pagination a {
-		display:flex;
-		justify-content:space-evenly;
-		align-items:center;
-		color:#2a2a2a;
-		width:40px;
-		height:40px;
-		border:0;
-		border-radius:50px;
-		transition:.15s ease-in-out;
-	}
-
-	.pagination span:hover,.pagination a:hover {
-		color:#dbb778;
-		cursor:pointer;
-		border:0;
-		transition:.15s ease-in-out;
-		background-color:#2a2a2a;
-	}
 }
 
 @keyframes selecting {
@@ -415,61 +306,61 @@ a {
 }
 
 .cb-leaderboard-entry {
-	
+
 	display:flex;
 	justify-content:flex-start;
 	flex-flow: row wrap;
 	align-items:center;
 	align-content:center;
-	
+
 }
 
 .cb-leaderboard-entry:after {
-	
+
 	content:'';
 	margin:auto;
 	display:block;
 	width:100%;
 	height:1px;
 	background-color:#dbb778;
-	
+
 }
 
 .cb-placement {
-	
+
 	display:block;
 	margin:0 20px 0 0;
 	width:100%;
 	max-width:40px;	
 	text-align:right;
-	
+
 }
 
 .cb-leaderboard-entry-item {
-	
+
 	display:block;
-	
+
 }
 
 .cb-user-leaderboard-bits {
-	
+
 	text-align:right;
 	margin-left:auto;
-	
+
 }
 
 .cb-form {
-	
+
 	width:auto;
 	margin-bottom:0;
-	
+
 }
 
 .cb-form-label-top {
-	
+
 	margin-top:.5rem;
 	margin-bottom:.5rem;
-	
+
 }
 
 .cb-form-line {
@@ -480,31 +371,31 @@ a {
 }
 
 .cb-form-textbox {
-	
+
 	flex-grow:0;
-	
+
 }
 
 ul.cb-form-page-section {
-	
+
 	list-style-type:none;
 	padding:0;
 	margin:0;
-	
+
 }
 
 .cb-submit {
-	
+
 	margin-top:20px;
 	width:100%;
 	max-width: 200px;
 	display:flex;
 	align-items:center;
-	
+
 }
 
 .submission-message-popup {
-	
+
 	width:100%;
 	border-radius:20px;
 	font-size:18px;
@@ -516,21 +407,21 @@ ul.cb-form-page-section {
 	color:#dbb778;
 	padding:10px;
 	margin:1rem;
-	
+
 }
 
 
 .cb-member-search-results-message {
-	
+
 	display:block;
 	margin-top:1.5rem;
-	
+
 }
 
 #cb_request_amount {
-	
+
 	color:#9a9a9a;
-	
+
 }
 
 /*----------Leaderboard----------*/
@@ -545,10 +436,10 @@ ul.cb-form-page-section {
 
 .cb-leaderboard {
 	background-color:#2a2a2a;
-	padding:20px;
+	padding:20px 40px;
 	width:100%;
 	color:white;
-	border-radius:20px;
+	border-radius:10px;
 	margin:0;
 }
 
@@ -622,6 +513,55 @@ input[type=submit].cb-submit:hover,input[type=submit].button:hover {
 	margin-top:20px;
 }
 
+.cb-close-notice-container:hover {
+	
+	cursor:pointer;
+	
+}
+
+.cb-notice-header-container {
+	
+	display:flex;
+	flex-flow:row nowrap;
+	justify-content:space-between;
+	
+}
+
+.cb-close-notice-container {
+	
+	flex: 0 1 10px;
+	display:flex;
+	justify-content:flex-end;
+	padding:5px;
+	margin:10px;
+	
+}
+
+.cb-close-notice:before {
+
+	content:'';
+	display:block;
+	width:20px;
+	height:2px;
+	transform:rotate(45deg)translatex(1.5px)translatey(1.5px);
+	border-radius:20px;
+	background-color:#dbb778;
+	margin:0;
+
+}
+
+.cb-close-notice:after {
+
+	content:'';
+	display:block;
+	width:20px;
+	height:2px;
+	transform:rotate(-45deg)translatex(0px)translatey(0px);
+	border-radius:20px;
+	background-color:#dbb778;
+		margin:0;
+
+}
 
 
 

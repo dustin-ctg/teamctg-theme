@@ -53,13 +53,12 @@ if ( bp_is_user_messages() || bp_is_user_settings() || bp_is_user_notifications(
 				<div id="item-body" class="item-body">
 					<div class="item-body-inner">
 						<?php bp_nouveau_member_template_part();
-						if ( cb_is_user_confetti_bits() ) {
-						?><div class="cb-wrapper"><?php
-							cb_member_template_part();
-						?></div><?php
-						}
+						if ( cb_is_user_confetti_bits() ) { ?>
 
-						?>
+						<div class="cb-wrapper">
+							<?php cb_member_template_part(); ?>
+						</div>
+						<?php } ?>
 					</div>
 				</div><!-- #item-body -->
 

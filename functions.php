@@ -7,7 +7,7 @@
 /****************************** THEME SETUP ******************************/
 
 
-define ('TEAMCTG_THEME_VERSION', '1.5.3');
+define ('TEAMCTG_THEME_VERSION', '1.5.5');
 define ('THEME_HOOK_PREFIX', 'cb');
 
 require_once 'editor-permissions.php';
@@ -48,13 +48,13 @@ function confettify_the_theme() {
 
 
 function confettify_the_login () {
-	
+
 	wp_enqueue_style( 
 		'cb-fonts',
 		'https://use.typekit.net/tnv7tsi.css', 
 		TEAMCTG_THEME_VERSION 
 	);
-	
+
 	wp_enqueue_style( 
 		'teamctg-login', 
 		get_stylesheet_directory_uri().
@@ -62,7 +62,7 @@ function confettify_the_login () {
 		TEAMCTG_THEME_VERSION, 
 		'all'
 	);
-	
+
 }
 
 
@@ -88,5 +88,30 @@ function is_this_admins() {
 	}
 }
 
+function tctg_sender_email( $original_email_address ) {
+	return 'tctgdustin@ctgserver.teamctg.com';
+}
+function tctg_sender_name( $original_email_from ) {
+	return 'TeamCTG';
+}
+add_filter( 'wp_mail_from', 'tctg_sender_email' );
+add_filter( 'wp_mail_from_name', 'tctg_sender_name' );
+
+function cb_has_moved_notification() {
 
 
+	if (is_page('confetti-bits')) {
+		$link = bp_loggedin_user_domain() . cb_get_transactions_slug();
+?><div class="cb-module" ><h3 style="text-align:center;font-family:bree-serif;">
+	The Confetti Bits Hub has <a style="text-decoration:underline;" href="<?php echo $link; ?>">moved to the profile page.</a>
+	</h3>
+	
+</div>
+<style>.entry-title {display:none;}</style>
+
+<?php
+	}
+
+}
+
+add_action( THEME_HOOK_PREFIX . '_template_parts_content_top', 'cb_has_moved_notification' );
