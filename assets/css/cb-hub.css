@@ -411,6 +411,12 @@ ul.cb-form-page-section {
 }
 
 
+.cb-form-selector:hover {
+	
+	cursor:pointer;
+	
+}
+
 .cb-member-search-results-message {
 
 	display:block;

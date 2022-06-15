@@ -19,7 +19,7 @@
 
 				<li class="cb-form-line">
 					<label class="cb-form-label-top" for="cb_request_option" >Request Options</label>
-					<select class="cb-form-textbox" 
+					<select class="cb-form-textbox cb-form-selector" 
 							name="cb_request_option" 
 							id="cb_request_option" 
 							placeholder="">
@@ -45,6 +45,14 @@
 						<option value="$20 CTG Gift Card" 
 								class="cbRequestOption" 
 								data-request-value="400">$20 CTG Gift Card</option>
+						
+						<?php if ( cb_is_user_site_admin() ) { ?>	
+						
+						<option value="Test Request" 
+								class="cbRequestOption" 
+								data-request-value="100">Test Request</option>
+						
+						<?php } ?>
 					</select>
 				</li> 
 

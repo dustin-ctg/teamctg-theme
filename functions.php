@@ -7,10 +7,10 @@
 /****************************** THEME SETUP ******************************/
 
 
-define ('TEAMCTG_THEME_VERSION', '1.5.5');
+define ('TEAMCTG_THEME_VERSION', '1.6.0');
 define ('THEME_HOOK_PREFIX', 'cb');
 
-require_once 'editor-permissions.php';
+//require_once 'editor-permissions.php';
 
 function do_the_translations() {
 
