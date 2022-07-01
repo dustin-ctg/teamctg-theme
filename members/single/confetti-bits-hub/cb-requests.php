@@ -14,7 +14,7 @@
 			Send a New Request
 		</h4>
 		<form class="cb-form" method="post" name="cb_request_form" id="cb_request_form" action="<?php echo  bp_get_canonical_url(); ?>" autocomplete="off">
-			
+
 			<ul class="cb-form-page-section" id="cb-send-bits-data">
 
 				<li class="cb-form-line">
@@ -45,13 +45,13 @@
 						<option value="$20 CTG Gift Card" 
 								class="cbRequestOption" 
 								data-request-value="400">$20 CTG Gift Card</option>
-						
+
 						<?php if ( cb_is_user_site_admin() ) { ?>	
-						
+
 						<option value="Test Request" 
 								class="cbRequestOption" 
 								data-request-value="100">Test Request</option>
-						
+
 						<?php } ?>
 					</select>
 				</li> 
@@ -76,17 +76,6 @@
 				</li>
 			</ul>
 		</form>
-		
-<?php 
-/*/		$transaction_logs = new Confetti_Bits_Transactions_Transaction();
-	$transaction_query = $transaction_logs->get_users_balance( get_current_user_id() );
-
-	foreach ( $transaction_query as $query_result ) {
-
-		$total = $query_result['amount'];
-		echo $total . '??';
-	} 
-		/*/?>
 	</div><!-- End of Module -->
 </div>
 <?php 

@@ -6,7 +6,7 @@
  * 
  */
 ?>
-
+	
 <div class="cb-container">
 	<div class="cb-module">
 		<div class="cb-leaderboard">

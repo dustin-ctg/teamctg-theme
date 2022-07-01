@@ -16,10 +16,7 @@
 
 			<?php cb_leaderboard(); ?>
 
-			<p style="margin:10px auto auto auto;">
-				<?php echo cb_get_total_bits_notice( get_current_user_id() ); ?>
-			</p>
-
 		</div>
+	
 	</div>
 </div><?php
