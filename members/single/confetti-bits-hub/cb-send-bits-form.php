@@ -5,7 +5,9 @@
  * Version 1.4.2
  * 
  */
-
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
 ?>
 
 <!-- Bring out the dancing markup -->

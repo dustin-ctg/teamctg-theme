@@ -5,6 +5,9 @@
  * Version 2.1.0
  * 
  */
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
 ?>
 
 <!-- Bring out the dancing markup -->
@@ -26,26 +29,29 @@
 						<option disabled selected >--- Select an Option ---</option>
 						<option value="One PTO Day" 
 								class="cbRequestOption" 
-								data-request-value="1500">One PTO Day</option>
-						<option value="Dinner/1-on-1 with Company Leader" 
-								class="cbRequestOption" 
-								data-request-value="1200">Dinner/1-on-1 with Company Leader</option>
+								data-request-value="500">One PTO Day</option>
 						<option value="Single Night Hotel Stay" 
 								class="cbRequestOption" 
-								data-request-value="900">Single Night Hotel Stay</option>
+								data-request-value="400">Single Night Hotel Stay</option>
+						<option value="Dinner/1-on-1 with Company Leader" 
+								class="cbRequestOption" 
+								data-request-value="350">Dinner/1-on-1 with Company Leader</option>
 						<option value="Spa Trip" 
 								class="cbRequestOption" 
-								data-request-value="700">Spa Trip</option>
+								data-request-value="250">Spa Trip</option>
 						<option value="$25 DoorDash Gift Card" 
 								class="cbRequestOption" 
-								data-request-value="500">$25 DoorDash Gift Card</option>
+								data-request-value="75">$25 DoorDash Gift Card</option>
 						<option value="$25 Starbucks Gift Card" 
 								class="cbRequestOption" 
-								data-request-value="500">$25 Starbucks Gift Card</option>
+								data-request-value="75">$25 Starbucks Gift Card</option>
 						<option value="$20 CTG Gift Card" 
 								class="cbRequestOption" 
-								data-request-value="400">$20 CTG Gift Card</option>
-
+								data-request-value="50">$20 CTG Gift Card</option>
+						<option value="$10 Starbucks Gift Card" 
+								class="cbRequestOption" 
+								data-request-value="25">$10 Starbucks Gift Card</option>
+						
 						<?php if ( cb_is_user_site_admin() ) { ?>	
 
 						<option value="Test Request" 
@@ -76,6 +82,12 @@
 				</li>
 			</ul>
 		</form>
+		<p class="cb-counter">
+								<?php if ( cb_is_user_site_admin() || cb_is_user_executive() ) { 
+cb_users_request_balance();
+}?>	
+		</p>
+			
 	</div><!-- End of Module -->
 </div>
 <?php 

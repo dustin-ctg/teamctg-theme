@@ -3,7 +3,9 @@
 /*/ 
  * Here we have true facts about the Confetti Bits Exports Module
 /*/
-
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
 ?>
 	
 	<div class="cb-container">
@@ -24,7 +26,10 @@
 						
 						<?php if ( cb_is_user_executive() ) { ?>
 						<option value="leadership">Leadership Transactions</option>
-						<option value="leaderboard">Leaderboard Top 15</option>
+						<option value="current_cycle_leaderboard">Leaderboard Top 15</option>
+						<option value="previous_cycle_leaderboard">Last Cycle's Leaderboard</option>
+						<option value="current_cycle_totals">All Totals (Current)</option>
+						<option value="previous_cycle_totals">All Totals (Previous Cycle)</option>
 						<?php } ?>
 						
 					</select>

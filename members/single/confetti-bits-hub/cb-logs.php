@@ -3,6 +3,9 @@
  * Here we have true facts about the Confetti Bits Log History Panel
 /*/
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
 
 ?>
 <div class="cb-container">
