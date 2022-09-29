@@ -16,6 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<h4 class="cb-heading">
 			Send a New Request
 		</h4>
+		<p class="cb-counter">
+			<?php 
+
+				cb_users_request_balance_notice();	
+
+			?>
+		</p>
+
 		<form class="cb-form" method="post" name="cb_request_form" id="cb_request_form" action="<?php echo  bp_get_canonical_url(); ?>" autocomplete="off">
 
 			<ul class="cb-form-page-section" id="cb-send-bits-data">
@@ -51,7 +59,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<option value="$10 Starbucks Gift Card" 
 								class="cbRequestOption" 
 								data-request-value="25">$10 Starbucks Gift Card</option>
-						
+
 						<?php if ( cb_is_user_site_admin() ) { ?>	
 
 						<option value="Test Request" 
@@ -82,13 +90,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</li>
 			</ul>
 		</form>
-		<p class="cb-counter">
-								<?php if ( cb_is_user_site_admin() || cb_is_user_executive() ) { 
-cb_users_request_balance();
-}?>	
-		</p>
-			
+
 	</div><!-- End of Module -->
 </div>
 <?php 
-

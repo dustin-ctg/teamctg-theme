@@ -7,7 +7,7 @@
 /****************************** THEME SETUP ******************************/
 
 
-define ('TEAMCTG_THEME_VERSION', '2.2.2');
+define ('TEAMCTG_THEME_VERSION', '2.3.0');
 define ('THEME_HOOK_PREFIX', 'cb');
 
 //require_once 'editor-permissions.php';
@@ -66,7 +66,7 @@ function confettify_the_login () {
 }
 
 
-add_action( 'login_enqueue_scripts', 'confettify_the_login', 15 );
+//add_action( 'login_enqueue_scripts', 'confettify_the_login', 15 );
 add_action( 'wp_enqueue_scripts', 'confettify_the_theme', 999 );
 //add_action('wp_head', 'get_the_fonts');
 

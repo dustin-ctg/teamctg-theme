@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 ?>
-<div class="cb-container">
+<div class="cb-container cb-wide">
 	<div class="cb-module">
 		<h4 class="cb-heading">
 			Search for someone to send them bits
@@ -24,7 +24,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 							   class="cb-submit" 
 							   name="cb_member_search_submit" 
 							   id="cb_member_search_submit" 
-							   action="" 
 							   value="Search">
 				</li>
 			</ul>

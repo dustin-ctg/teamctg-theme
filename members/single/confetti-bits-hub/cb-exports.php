@@ -23,13 +23,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 							id="cb_export_type"
 							placeholder="">
 						<option value="self" selected>My Transactions</option>
-						
+						<option value="current_cycle_leaderboard">Leaderboard Top 15</option>
+						<option value="previous_cycle_leaderboard">Last Cycle's Leaderboard</option>						
 						<?php if ( cb_is_user_executive() ) { ?>
 						<option value="leadership">Leadership Transactions</option>
-						<option value="current_cycle_leaderboard">Leaderboard Top 15</option>
-						<option value="previous_cycle_leaderboard">Last Cycle's Leaderboard</option>
 						<option value="current_cycle_totals">All Totals (Current)</option>
 						<option value="previous_cycle_totals">All Totals (Previous Cycle)</option>
+						<?php } ?>
+						<?php if ( cb_is_user_requests_fulfillment() ) { ?>
+						<option value="current_requests">Requests</option>
 						<?php } ?>
 						
 					</select>
@@ -37,9 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				<li class="cb-form-line">
 					<label class="cb-form-label-top" for="cb_export_logs">Export a .csv file of your transaction history</label>
-					<button type="submit" id="cb_export_logs" name="cb_export_logs" >
-						Submit
-					</button>
+					<input type="submit" id="cb_export_logs" name="cb_export_logs" value="Submit" class="cb-submit">
 				</li>
 			</ul>
 		</form>

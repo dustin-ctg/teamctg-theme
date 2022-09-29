@@ -16,6 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<h4 class="cb-heading">
 			Send Bits to Team Members!
 		</h4>
+		<p class="cb-counter">
+			<?php 
+			if ( !cb_is_user_admin() || cb_is_user_site_admin() ) {
+				cb_users_transfer_balance_notice();
+			}
+			?>
+		</p>
 		<form class="cb-form" method="post" name="send_bits_form" id="send_bits_form" action="<?php echo  bp_get_canonical_url(); ?>" autocomplete="off">
 			<ul class="cb-form-page-section" id="cb-send-bits-data">
 
@@ -62,12 +69,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</li>
 
 				<li class="cb-form-line">
-						<input class="cb-submit" 
-							   type="submit"
-							   name="cb_send_bits"
-							   id="cb_send_bits"
-							   action="<?php echo  wp_nonce_url(bp_get_canonical_url(), 'cb-send-bits'); ?>" 
-							   value="Submit">
+					<input class="cb-submit" 
+						   type="submit"
+						   name="cb_send_bits"
+						   id="cb_send_bits"
+						   action="<?php echo  wp_nonce_url(bp_get_canonical_url(), 'cb-send-bits'); ?>" 
+						   value="Submit">
 				</li>
 			</ul>
 			<input type="hidden" 
