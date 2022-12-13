@@ -1,104 +1,91 @@
-/*--------------------------------------------------------------
+/**
+* Here's our stylesheet. It ain't honest, but it's much.
+*/
 
-Here's our stylesheet. It ain't honest, but it's much.
-
---------------------------------------------------------------*/
-
-.bb-custom-typo h1, .bb-custom-typo .h1,  .bb-custom-typo h3, .bb-custom-typo .h3,  .bb-custom-typo h5, .bb-custom-typo .h5, .bb-custom-typo .bb-course-footer, .bb-custom-typo .ld-table-list-header .ld-text, .bb-custom-typo .gamipress-achievement-points, .bb-custom-typo .vjs-modal-dialog-content,h5.member-search-results-message {
-	font-family:bree-serif, sans-serif;
+.cb-dashboard-header {
+	position:relative;
+	display:flex;
+	flex-direction:row;
+	flex-wrap: wrap;
+	justify-content:space-around;
+	align-items:center;
+	background-color:#2a2a2a;
+	border-radius: 30px;
+}
+.cb-feedback {
+	width:100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+	padding:15px;
 }
 
-.bb-custom-typo h2, .bb-custom-typo .h2, .bb-custom-typo h4, .bb-custom-typo .h4, .bb-custom-typo h6, .bb-custom-typo .h6 {
-	font-family:dinosaur, sans-serif;
+.cb-feedback p {
+	margin: 0;
 }
 
-h1.entry-title, h1.page-title {
-	font-family:bree-serif,sans-serif;
-	font-weight:300;
+.cb-hub-nav-toggle {
+	display:none;
+	flex-flow: column nowrap;
+	justify-content:center;
+	align-items:space-between;
+	width: 25px;
+	height: 25px;
 }
 
-h2.user-nicename,h2.bs-section-title,h2.bb-title {
-	font-family:bree-serif,sans-serif;
-	font-weight:200;
-	color:#dbb778;
-}
-h2.groups-title > a, h2.screen-heading {
-	font-family:dinosaur,sans-serif;
-	text-transform:uppercase;
-	font-weight:300;
-	color:#dbb778;
+.cb-hub-nav-toggle:before, .cb-hub-nav-toggle:after {
+	content: '';
+	display:block;
+	margin: 10px auto;
+	width: 25px;
+	height: 2px;
+	border-radius: 2px;
+	background-color: #d1cbc1;
 }
 
-.widget-title a {
-	font-family:dinosaur, sans-serif;
-	font-weight:300;
-	font-size:1rem;
+.cb-hub-nav-container {
+	display:flex;
+	flex-flow:row wrap;
+	justify-content:center;
+	align-items:center;
+	width: 100%;
 }
 
-h2, h4, h6, #post-3 > div > h2, .entry-content > h2, .bp-widget > h4, .bp-widget > h3, .bb-courses-header > h4 {
-	font-family:dinosaur,sans-serif;
-	font-weight:300;
-	color:#dbb778;
-	text-transform:uppercase;
+.cb-hub-nav-item {
+	flex: 1 1 150px;
+	margin: 10px;
+	font-size: 14px;
 }
 
-
-h3.post-h3 {
-	font-family:dinosaur,sans-serif;
-	text-transform:uppercase;
-	font-weight:lighter;
+.cb-hub-nav-item a {
+	display:block;
+	width:100%;
+	height: 100%;
+	text-align:center;
 }
 
-span, p, li, a, h3, h5,.no-message-content > h3 {
-	font-family:bree-serif,sans-serif;
-	font-weight:light;
+.cb-wrapper {
+	width:100%;
+	height:auto;
 }
 
-#post-5 > header > h1 {
-	font-family: bree-serif, sans-serif;
-	font-weight:200;
-	font-style: normal;
+.cb-container {
+	display:none;
+	transition: all .25s ease-in-out;
+	flex: 1 1 400px;
 }
 
-.menu-item {
-	font-family:bree-serif,sans-serif;
-	font-weight:300;
-	text-transform:uppercase;
+.cb-container.active {
+	display:flex;
+	flex-flow: row wrap;
+	justify-content:space-evenly;
 }
 
-.side-panel-menu .current-menu-item a {
-	font-weight:300;
-	font-family:bree-serif, sans-serif;
-	text-transform:uppercase;
+.cb-container .cb-module {
+	flex: 1 1 400px;
+	margin: 10px;
 }
-
-div:nth-child(1){
-	font-family:bree-serif, sans-serif;
-	font-weight:300;
-}
-
-
-h4.entry-content {
-	font-family:dinosaur,sans-serif;
-	font-weight:400;
-	text-transform:uppercase;
-}
-
-h2.title{
-	font-family:dinosaur,sans-serif;
-}
-
-h2.bb-bp-group-title, h4.bb-section-title {
-	font-family:bree-serif,sans-serif;
-}
-
-/*----------Sort This----------*/
-
-a {
-	transition: .15s ease-in-out;
-}
-
-
 
 .cb-log-pagination {
 
@@ -124,23 +111,30 @@ a {
 }
 
 .cb-log-pagination li {
-
 	display:flex;
 	justify-content:center;
 	align-items:center;
 	color:white;
-	width:40px;
-	height:40px;
+	aspect-ratio:1;
+	flex: 0 1 40px;
+	width: 100%;
+	height: 100%;
+	max-width:40px;
+	max-height:40px;
 	border:0;
 	border-radius:50px;
 	transition:.15s ease-in-out;
+	cursor:pointer;
+}
 
+.cb-log-pagination .cb-log-link-disabled {
+	cursor:default;
+	color:#d1cbc1;
 }
 
 .cb-log-pagination .cb-log-link-disabled:hover {
 
-	cursor:default;
-	color:white;
+	color:#d1cbc1;
 	border:0;
 	background-color:transparent;
 
@@ -155,7 +149,6 @@ a {
 .cb-log-pagination li:hover {
 
 	color:#dbb778;
-	cursor:pointer;
 	border:0;
 	transition:.15s ease-in-out;
 	background-color:#2a2a2a;
@@ -239,10 +232,6 @@ a {
 }
 
 
-.cb-container {
-	margin:10px;
-	flex: 1 1 400px;
-}
 
 .cb-container.cb-half {
 	margin:10px;
@@ -250,11 +239,10 @@ a {
 }
 
 .cb-container.cb-wide {
-/*	flex: 2 1 400px;*/
+
 }
 
 .cb-module {
-	margin: 20px;
 	border:1px solid #dbb778;
 	border-radius:10px;
 	width:100%;
@@ -263,13 +251,8 @@ a {
 	page-break-inside: avoid;
 }
 
-.cb-wrapper {
-	width:100%;
-	height:auto;
-	columns:2;
-}
 
-.cb-heading{
+.cb-heading {
 	margin-bottom:.25rem;
 }
 
@@ -326,54 +309,7 @@ a {
 
 }
 
-input[type=number]::-webkit-inner-spin-button {
-	display:none;
-}
 
-.cb-form {
-
-	width:auto;
-	margin-bottom:0;
-
-}
-
-.cb-form-label-top {
-
-	margin-top:.5rem;
-	margin-bottom:.5rem;
-
-}
-
-.cb-form-line {
-	display:flex;
-	flex-wrap:wrap;
-	flex-direction:column;
-	width:100%;
-}
-
-.cb-form-textbox {
-
-	flex-grow:0;
-
-}
-
-ul.cb-form-page-section {
-
-	list-style-type:none;
-	padding:0;
-	margin:0;
-
-}
-
-.cb-submit {
-
-	margin-top:20px;
-	width:100%;
-	max-width: 200px;
-	display:flex;
-	align-items:center;
-
-}
 
 .submission-message-popup {
 
@@ -392,11 +328,7 @@ ul.cb-form-page-section {
 }
 
 
-.cb-form-selector:hover {
-	
-	cursor:pointer;
-	
-}
+
 
 .cb-member-search-results-message {
 
@@ -405,11 +337,6 @@ ul.cb-form-page-section {
 
 }
 
-#cb_request_amount {
-
-	color:#9a9a9a;
-
-}
 
 /*----------Leaderboard----------*/
 
@@ -422,45 +349,8 @@ ul.cb-form-page-section {
 }
 
 .cb-leaderboard {
-	background-color:#2a2a2a;
-	padding:20px 40px;
 	width:100%;
-	color:white;
-	border-radius:10px;
 	margin:0;
-}
-
-/*---------- Those pesky submit buttons and their silly little box-shadows ----------*/
-
-input[type=submit] {
-	background-color:transparent;
-}
-
-input[type=submit] {
-	background-color:transparent;
-	color:#dbb778;
-	border:3px solid #dbb778;
-	transition:.15s ease-in-out;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	padding-top:0;
-	padding-bottom:0;
-}
-
-input[type=submit]:hover {
-	transform:scale(1.15);
-	background-color:#dbb778;
-	color:white;
-	box-shadow:none;
-}
-
-input[type=submit].cb-submit,input[type=submit].button {
-	background-color:transparent;
-}
-
-input[type=submit].cb-submit:hover,input[type=submit].button:hover {
-	background-color:#dbb778;
 }
 
 .import-notifications .cb-module {
@@ -501,27 +391,27 @@ input[type=submit].cb-submit:hover,input[type=submit].button:hover {
 }
 
 .cb-close-notice-container:hover {
-	
+
 	cursor:pointer;
-	
+
 }
 
 .cb-notice-header-container {
-	
+
 	display:flex;
 	flex-flow:row nowrap;
 	justify-content:space-between;
-	
+
 }
 
 .cb-close-notice-container {
-	
+
 	flex: 0 1 10px;
 	display:flex;
 	justify-content:flex-end;
 	padding:5px;
 	margin:10px;
-	
+
 }
 
 .cb-close-notice:before {
@@ -546,149 +436,8 @@ input[type=submit].cb-submit:hover,input[type=submit].button:hover {
 	transform:rotate(-45deg)translatex(0px)translatey(0px);
 	border-radius:20px;
 	background-color:#dbb778;
-		margin:0;
+	margin:0;
 
-}
-
-
-
-
-/*----------Radio Button----------*/
-.gfield_radio input[type=radio]:checked+.bb-radio-label:after, .gfield_radio input[type=radio]:checked+label:after {
-	top:9px;
-}
-
-/*----------Range Slider Styles----------*/
-
-input[type=range] {
-	-webkit-appearance:none;
-	width: 100%;
-	background: transparent;
-	border:0;
-}
-
-/*----- For Safari -----*/
-input[type=range]::-webkit-slider-thumb {
-	-webkit-appearance: none;
-}
-
-input[type=range]:focus {
-	outline: 0;
-}
-
-/* All the same stuff for IE */
-input[type=range]::-ms-track {
-	width: 100%;
-	cursor: pointer;
-	background: transparent;
-	border-color: transparent;
-	color: transparent;
-}
-
-/*----- For Safari -----*/
-input[type=range]::-webkit-slider-thumb {
-	-webkit-appearance:none;
-	border:3px solid #2a2a2a80;
-	box-shadow:0px 0px 5px #2a2a2a75;
-	height:36px;
-	width: 36px;
-	border-radius: 50%;
-	background: url(https://teamctg.com/wp-content/uploads/2021/11/white-bars.svg) #077692;
-	background-size: 55%;
-	background-position: center;
-	background-repeat: no-repeat;
-	cursor: pointer;
-	margin-top:-14px;
-}
-
-/* All the same stuff for Firefox */
-input[type=range]::-moz-range-thumb {
-	border: 1px solid #dbb778;
-	box-shadow:2px 2px #2a2a2a;
-	height:36px;
-	width: 36px;
-	border-radius: 50%;
-	background-color: #dbb778;
-	cursor: pointer;
-	margin-top:-14px;
-}
-
-/* All the same stuff for IE */
-input[type=range]::-ms-thumb {
-	border: 1px solid #dbb778;
-	box-shadow:2px 2px #2a2a2a;
-	height:36px;
-	width: 36px;
-	border-radius: 50%;
-	background-color: #dbb778;
-	cursor: pointer;
-	margin-top:-14px;
-}
-
-/*----- For Safari -----*/
-input[type=range]::-webkit-slider-runnable-track {
-	width: 100%;
-	height: 10px;
-	cursor: pointer;
-	box-shadow: 0px 0px 5px #2a2a2a75;
-	background-color: #077692;
-	border-radius: 10px;
-	border:0;
-}
-
-input[type=range]:focus::-webkit-slider-runnable-track {
-	background: #2a2a2a;
-}
-
-/* All the same stuff for Firefox */
-input[type=range]::-moz-range-track {
-	width: 100%;
-	height: 10px;
-	cursor: pointer;
-	box-shadow: 0px 0px 5px #2a2a2a75;
-	background-color: #077692;
-	border-radius: 10px;
-	border:0;
-}
-
-/* All the same stuff for IE */
-input[type=range]::-ms-track {
-	width: 100%;
-	height: 10px;
-	cursor: pointer;
-	box-shadow: 0px 0px 5px #2a2a2a75;
-	background-color: #077692;
-	border-radius: 10px;
-	border:0;
-}
-input[type=range]::-ms-fill-lower {
-	background: #077692;
-	border:0;
-	box-shadow: 0px 0px 5px #2a2a2a75, 0px 0px 5px #2a2a2a75;
-}
-input[type=range]:focus::-ms-fill-lower {
-	background: #2a2a2a;
-}
-input[type=range]::-ms-fill-upper {
-	background: #077692;
-	border:0;
-	box-shadow: 0px 0px 5px #2a2a2a75, 0px 0px 5px #2a2a2a75;
-}
-
-input[type=range]:focus::-ms-fill-upper {
-	background: #2a2a2a;
-}
-
-#buddypress input[type=submit] {
-	color:#dbb778;
-	border-color:#dbb778;
-	transition:.15s ease-in-out;
-}
-
-#buddypress input[type=submit]:hover {
-	color:#dbb778;
-	border-color:#2a2a2a;
-	transform: scale(1.15);
 }
 
 .cb-dev-link {

@@ -1,0 +1,91 @@
+.bb-custom-typo h1, .bb-custom-typo .h1,  .bb-custom-typo h3, .bb-custom-typo .h3,  .bb-custom-typo h5, .bb-custom-typo .h5, .bb-custom-typo .bb-course-footer, .bb-custom-typo .ld-table-list-header .ld-text, .bb-custom-typo .gamipress-achievement-points, .bb-custom-typo .vjs-modal-dialog-content,h5.member-search-results-message {
+	font-family:bree-serif, sans-serif;
+}
+
+.bb-custom-typo h2, .bb-custom-typo .h2, .bb-custom-typo h4, .bb-custom-typo .h4, .bb-custom-typo h6, .bb-custom-typo .h6 {
+	font-family:dinosaur, sans-serif;
+}
+
+h1.entry-title, h1.page-title {
+	font-family:bree-serif,sans-serif;
+	font-weight:300;
+}
+
+h2.user-nicename,h2.bs-section-title,h2.bb-title {
+	font-family:bree-serif,sans-serif;
+	font-weight:200;
+	color:#dbb778;
+}
+h2.groups-title > a, h2.screen-heading {
+	font-family:dinosaur,sans-serif;
+	text-transform:uppercase;
+	font-weight:300;
+	color:#dbb778;
+}
+
+.widget-title a {
+	font-family:dinosaur, sans-serif;
+	font-weight:300;
+	font-size:1rem;
+}
+
+h2, h4, h6, #post-3 > div > h2, .entry-content > h2, .bp-widget > h4, .bp-widget > h3, .bb-courses-header > h4 {
+	font-family:dinosaur,sans-serif;
+	font-weight:300;
+	color:#dbb778;
+	text-transform:uppercase;
+}
+
+
+h3.post-h3 {
+	font-family:dinosaur,sans-serif;
+	text-transform:uppercase;
+	font-weight:lighter;
+}
+
+span, p, li, a, h3, h5,.no-message-content > h3 {
+	font-family:bree-serif,sans-serif;
+	font-weight:light;
+}
+
+#post-5 > header > h1 {
+	font-family: bree-serif, sans-serif;
+	font-weight:200;
+	font-style: normal;
+}
+
+.menu-item {
+	font-family:bree-serif,sans-serif;
+	font-weight:300;
+	text-transform:uppercase;
+}
+
+.side-panel-menu .current-menu-item a {
+	font-weight:300;
+	font-family:bree-serif, sans-serif;
+	text-transform:uppercase;
+}
+
+div:nth-child(1){
+	font-family:bree-serif, sans-serif;
+	font-weight:300;
+}
+
+
+h4.entry-content {
+	font-family:dinosaur,sans-serif;
+	font-weight:400;
+	text-transform:uppercase;
+}
+
+h2.title{
+	font-family:dinosaur,sans-serif;
+}
+
+h2.bb-bp-group-title, h4.bb-section-title {
+	font-family:bree-serif,sans-serif;
+}
+
+a {
+	transition: all .15s ease-in-out;
+}

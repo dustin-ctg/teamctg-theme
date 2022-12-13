@@ -10,8 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<!-- Bring out the dancing markup -->
-<div class="cb-container">
+<div class="cb-container" id="cb-requests">
 	<div class="cb-module">
 		<h4 class="cb-heading">
 			Send a New Request
@@ -83,8 +82,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<li class="cb-form-line">
 					<input class="cb-submit" 
 						   type="submit"
-						   name="send_bits_request"
-						   id="send_bits_request"
+						   name="cb_send_bits_request"
+						   id="cb_send_bits_request"
 						   action="<?php echo  wp_nonce_url(bp_get_canonical_url(), 'cb-send-bits-request'); ?>" 
 						   value="Submit">
 				</li>

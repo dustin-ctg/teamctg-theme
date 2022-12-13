@@ -1,0 +1,442 @@
+.cb-participation-admin-nav {
+	list-style-type:none;
+	display: flex;
+	width: 100%;
+	height: 40px;
+	margin: 20px auto;
+}
+
+.cb-participation-admin-nav-item {
+	flex: 1 1 200px;
+	text-align: center;
+}
+.cb-participation-admin-nav-item.active a {
+	color: #d1cbc1;
+}
+
+div.cb-participation-admin-panel {
+	display:none;
+}
+
+.cb-participation-admin-panel.active {
+	display:flex;
+	flex-flow: row wrap;
+	justify-content:space-evenly;
+}
+
+.cb-participation-admin-empty-notice {
+	width: 100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	background-color: #d1cbc150;
+	border-radius: 30px;
+	text-align:center;
+	color: #2a2a2a;
+	padding: 10px;
+
+}
+
+.cb-participation-admin-empty-notice p {
+	margin: 0;
+}
+
+.cb-participation-admin-entry {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-flow: row wrap;
+	flex: 0 1 300px;
+	padding: 20px;
+	border: 1px solid #dbb778;
+	border-radius: 20px;
+	margin: 10px;
+}
+
+.cb-participation-admin-entry-data-container {
+	width: 100%;
+}
+
+.cb-participation-admin-entry-data {
+	display:block;
+	flex: 1 1 100%;
+	margin: 10px auto;
+	font-size: 14px;
+}
+
+.cb-participation-entry-applicant-name {
+	font-size: 18px;
+}
+
+.cb-participation-admin-entry-status {
+	text-align: right;
+	width: 100%;
+}
+
+.cb-participation-status-new {
+	color: #007692;
+}
+
+.cb-participation-status-approved {
+	color: #62cc8f;
+}
+
+.cb-participation-status-denied {
+	color: #ffad87;
+}
+
+.cb-participation-admin-entry p {
+	margin: auto;
+}
+
+.cb-participation-pagination-container {
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	width: 100%;
+	height: 20vh;	
+	max-height: 30px;
+	margin: 30px auto;
+}
+
+.cb-participation-pagination {
+	width: 50%;
+	height: 15vh;
+	max-height: 40px;
+	min-width: 200px;
+	max-width: 600px;
+	background-color: #d1cbc150;
+	border-radius: 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.buddypress .buddypress-wrap button.cb-participation-pagination-button {
+	display:flex;
+	width:40px;
+	height: 40px;
+	justify-content:center;
+	align-items: center;
+	padding: 0;
+	position: relative;
+}
+
+.buddypress .buddypress-wrap button.cb-participation-pagination-button.active {
+	background-color: #2a2a2a;
+	color: #dbb778;
+}
+
+.buddypress .buddypress-wrap button.cb-participation-pagination-button.disabled:hover {
+	cursor: not-allowed;
+	border-color: transparent;
+	color: #c8cbcf;
+	background-color: #f5f5f5;
+	pointer-events:none;
+}
+
+.buddypress .buddypress-wrap button.cb-participation-pagination-button:hover {
+	border-color:#2a2a2a;
+	color: #dbb778;
+}
+
+.buddypress button.cb-participation-admin-edit-button {
+	width: 100%;
+	background-color: transparent;
+}
+
+.buddypress button.cb-participation-admin-edit-button:hover {
+	border-color: #2a2a2a;
+}
+
+#cb-participation-admin-edit-form-wrapper {
+	display:none;
+	width: 100%;
+	max-width: 90dvw;
+	max-height: 90dvh;
+	height: 100%;
+}
+
+#cb-participation-admin-edit-form-wrapper.active {
+	top: 50%;
+	left: 50%;
+	position:fixed;
+	display:flex;
+	transform: translate( -50%, -50% );
+	justify-content:center;
+	align-items:center;
+	z-index:991;
+}
+
+#cb-participation-admin-edit-form-wrapper.active:before {
+	content:'';
+	top: 50%;
+	left: 50%;
+	position:fixed;
+	display:block;
+	transform: translate( -50%, -50% );
+	z-index:990;
+	width: 100vw;
+	max-width: 100dvw;
+	max-height: 100dvh;
+	height: 100dvh;
+	background-color:black;
+	opacity: .5;
+}
+
+#cb-participation-admin-edit-form-container {
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	max-width: 600px;
+	max-height:80dvh;
+	position:relative;
+	z-index: 992;
+	background-color: white;
+	border-radius: 10px;
+}
+
+#cb-participation-admin-edit-form {
+	display:block;
+	width: 100%;
+	height: 80%;
+	max-height: 500px;
+	max-width: 400px;
+	display: block;
+	padding:20px;
+	overflow-y:scroll;
+	scrollbar-width: 6px;
+	scrollbar-color: #d1cbc1 transparent;
+}
+
+
+
+#cb-participation-admin-edit-form::-webkit-scrollbar {
+  width: 6px;
+	
+}
+
+#cb-participation-admin-edit-form::-webkit-scrollbar-track {
+	
+  background: transparent;
+}
+
+#cb-participation-admin-edit-form::-webkit-scrollbar-thumb {
+  background-color: #d1cbc1;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid #d1cbc1;  /* creates padding around scroll thumb */
+}
+
+.cb-participation-admin-edit-form-applicant-data {
+	display: flex;
+	gap: 20px;
+}
+
+
+label[for=cb_participation_amount_override] {
+	display:none;
+}
+
+label[for=cb_participation_amount_override].override {
+	display:block;
+}
+
+#cb_participation_amount_override {
+	display:none;
+}
+
+#cb_participation_amount_override.override {
+	display:block;
+}
+
+#cb-participation-admin-edit-form-close {
+	display:flex;
+	position: absolute;
+	float:right;
+	right: 5%;
+	top: 5%;
+	justify-content:center;
+	align-items:center;
+	width: 20px;
+	height: 20px;
+	border: 0;
+	background-color: transparent;
+}
+
+#cb-participation-admin-edit-form-close:hover {
+	border: 0;
+	background-color: transparent;
+}
+
+#cb-participation-admin-edit-form-close:hover:before,
+#cb-participation-admin-edit-form-close:hover:after {
+	opacity: .5;
+}
+
+#cb-participation-admin-edit-form-close:before {
+	content: '';
+	width: 20px;
+	position:absolute;
+	height: 2px;
+	background-color: #d1cbc1;
+	border-radius: 5px;
+	transform: rotate(45deg);
+	transition: all .25s ease-in-out;
+}
+#cb-participation-admin-edit-form-close:after {
+	content: '';
+	width: 20px;
+	position:absolute;
+	height: 2px;
+	background-color: #d1cbc1;
+	border-radius: 5px;
+	transform: rotate(-45deg);
+	transition: all .25s ease-in-out;
+}
+
+#cb-participation-file-viewer-wrapper {
+	display:none;
+	width: 100%;
+	max-width: 80vw;
+	max-height: 80vh;
+	height: 100%;
+}
+
+#cb-participation-file-viewer-wrapper.active {
+	top: 50%;
+	left: 50%;
+	position:fixed;
+	display:block;
+	transform: translate( -50%, -50% );
+	z-index:991;
+}
+
+#cb-participation-file-viewer-wrapper.active:before {
+	content:'';
+	top: 50%;
+	left: 50%;
+	position:fixed;
+	display:block;
+	transform: translate( -50%, -50% );
+	z-index:990;
+	width: 100vw;
+	max-width: 100vw;
+	max-height: 100vh;
+	height: 100vh;
+	background-color:black;
+	opacity: .5;
+}
+
+#cb-participation-file-viewer-container {
+	display:block;
+	position:relative;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	z-index: 992;
+}
+
+#cb-participation-file-viewer {
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	position:relative;
+	height: 100%;
+	max-height: 400px;
+	overflow:hidden;
+	margin: 30px;
+}
+
+
+#cb-participation-file-viewer.is-loading:after {
+	content:'';
+}
+
+#cb-participation-file-viewer img {
+	position: absolute;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a.cb-participation-admin-thumb-link.active {
+	opacity: 0.3;
+}
+
+#cb-participation-thumbnail-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content:center;
+	align-items:flex-start;
+
+}
+
+#cb-participation-thumbnail-container.active {
+}
+
+a.cb-participation-admin-thumb-link {
+	display:block;
+	aspect-ratio: 1;
+	flex: 0 0 5vw;
+	min-width: 50px;
+	min-height: 50px;
+	border-radius: 50px;
+	margin: 10px;
+	overflow:hidden;
+}
+
+.cb-participation-admin-thumb {
+	aspect-ratio: 1;
+	width: 100%;
+	height:100%;
+	object-fit: cover;
+}
+
+
+
+#cb-participation-file-view-close {
+	display:flex;
+	position: absolute;
+	float:right;
+	right: 0;
+	justify-content:center;
+	align-items:center;
+	width: 20px;
+	height: 20px;
+	border: 0;
+	background-color: transparent;
+
+}
+
+#cb-participation-file-view-close:hover {
+	border: 0;
+	background-color: transparent;
+}
+
+#cb-participation-file-view-close:hover:before,
+#cb-participation-file-view-close:hover:after {
+	opacity: .5;
+}
+
+#cb-participation-file-view-close:before {
+	content: '';
+	width: 20px;
+	position:absolute;
+	height: 2px;
+	background-color: #d1cbc1;
+	border-radius: 5px;
+	transform: rotate(45deg);
+	transition: all .25s ease-in-out;
+}
+#cb-participation-file-view-close:after {
+	content: '';
+	width: 20px;
+	position:absolute;
+	height: 2px;
+	background-color: #d1cbc1;
+	border-radius: 5px;
+	transform: rotate(-45deg);
+	transition: all .25s ease-in-out;
+}
+

@@ -1,6 +1,6 @@
 // Here we have true facts about the confetti bits javascript shenanigans
 
-jQuery(document).ready(function($){
+jQuery( document ).ready( function( $ ) {
 
 	var requestAmount = $('#cb_request_option'),
 		memberSelect = $('.memberSelect'),
@@ -17,16 +17,58 @@ jQuery(document).ready(function($){
 		sendToAmount = document.querySelector("#cb_request_amount"),
 		closeNoticeContainer = $('.cb-close-notice-container');
 
-	
+	let activeTab = window.location.hash;
+
+	const $hubNav			= $('.cb-hub-nav-container');
+
+	if ( activeTab ) {
+
+		let $tab	= $($hubNav).find('div.cb-hub-nav-item.active');
+		let $link	= $tab.find('a');
+		let $module	= $($link.attr('href'));
+		let $activeModule	= $('.cb-container.active');
+
+		$tab.removeClass('active');
+		$activeModule.removeClass('active');
+		
+		$module = $(activeTab).addClass('active');
+		$tab	= $("a[href='" + activeTab + "']").parent().addClass('active');
+		
+	}
+
+	$($hubNav).each( function() {
+
+		let $this	= $(this);									
+		let $tab	= $this.find('div.cb-hub-nav-item.active');	
+		let $link	= $tab.find('a');
+		let $module	= $($link.attr('href'));
+
+		$this.on('click', '.cb-hub-nav-link', function ( e ) {
+			e.preventDefault();
+			let $link	= $(this);
+			let id		= this.hash;
+
+			if ( id && ! $link.is('.active') ) {
+
+				$module.removeClass('active');	
+				$tab.removeClass('active');
+
+				$module = $(id).addClass('active');
+				$tab	= $link.parent().addClass('active');
+
+			}
+
+		});
+
+	});
+
+
 	closeNoticeContainer.click( function() {
 		closeNoticeContainer.parents('.cb-notice').slideUp( function(){
 			closeNoticeContainer.parents('.cb-notice').remove();
 			return false;
 		});
 	});
-
-
-
 
 	requestSubmitConfirm.submit( function() {
 
@@ -58,16 +100,11 @@ jQuery(document).ready(function($){
 
 	});
 
-
-	// Member search module
-
 	memberSelect.click(function () {
 
 		var memberData = jQuery(this).data('member-id');
 		var memberNameData = jQuery(this).data('member-display-name');
 		var that = jQuery('.memberSelect').not( this );
-
-
 
 		switch ( true ) {
 
@@ -118,6 +155,66 @@ jQuery(document).ready(function($){
 		}
 	});
 
+	function unReadNotifications () {
+		var notification_queue = [];
+		$( document ).on(
+			"click",
+			".cb-read-all-notifications",
+			function ( e ) {
+				var data = {
+					'action': 'buddyboss_theme_unread_notification',
+					'notification_id': $( this ).data( 'notification-id' )
+				};
+				if ( notification_queue.indexOf( $( this ).data( 'notification-id' ) ) !== -1 ) {
+					return false;
+				}
+				notification_queue.push( $( this ).data( 'notification-id' ) );
+				var notifs = $( '.bb-icon-bell' );
+				var notif_icons = $( notifs ).parent().children( '.count' );
+				if ( notif_icons.length > 0 ) {
+					if ( $( this ).data( 'notification-id' ) !== 'all' ) {
+						notif_icons.html( parseInt( notif_icons.html() ) - 1 );
+					} else {
+						if ( parseInt( $( '#header-notifications-dropdown-elem ul.notification-list li' ).length ) < 25 ) {
+							notif_icons.fadeOut();
+						} else {
+							notif_icons.html( parseInt( notif_icons.html() ) - parseInt( $( '#header-notifications-dropdown-elem ul.notification-list li' ).length ) );
+						}
+					}
+				}
+				if ( $( '.notification-wrap.menu-item-has-children.selected ul.notification-list li' ).length !== 'undefined' && $( '.notification-wrap.menu-item-has-children.selected ul.notification-list li' ).length == 1 || $( this ).data( 'notification-id' ) === 'all' ) {
+					$( '#header-notifications-dropdown-elem ul.notification-list' ).html( '<p class="bb-header-loader"><i class="bb-icon-loader animate-spin"></i></p>' );
+				}
+				if ( $( this ).data( 'notification-id' ) !== 'all' ) {
+					$( this ).parent().parent().fadeOut();
+					$( this ).parent().parent().remove();
+				}
+				$.post(
+					ajaxurl,
+					data,
+					function ( response ) {
+						var notifs = $( '.bb-icon-bell' );
+						var notif_icons = $( notifs ).parent().children( '.count' );
+						if ( notification_queue.length === 1 && response.success && typeof response.data !== 'undefined' && typeof response.data.contents !== 'undefined' && $( '#header-notifications-dropdown-elem ul.notification-list' ).length ) {
+							$( '#header-notifications-dropdown-elem ul.notification-list' ).html( response.data.contents );
+						}
+						if ( typeof response.data.total_notifications !== 'undefined' && response.data.total_notifications > 0 && notif_icons.length > 0 ) {
+							$( notif_icons ).text( response.data.total_notifications );
+							$( '.notification-header .cb-read-all-notifications' ).show();
+						} else {
+							$( notif_icons ).remove();
+							$( '.notification-header .cb-read-all-notifications' ).fadeOut();
+						}
+						var index = notification_queue.indexOf( $( this ).data( 'notification-id' ) );
+						notification_queue.splice( index, 1 );
+					}
+				);
+			}
+		);
+	}
+
+	unReadNotifications();
+
 	requestAmount.change(function() {
 
 		var requestData = jQuery(this).find(':selected').data('request-value');
@@ -125,4 +222,7 @@ jQuery(document).ready(function($){
 		sendToAmount.value = requestData;
 
 	});
+
+
+
 });
